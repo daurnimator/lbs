@@ -39,19 +39,19 @@ static const luaL_Reg lib[] = {
 
 int luaopen_mylualib(lua_State *L) {
 	lbs_register_type(L, "vec3");
-	lbs_register_float_field(L, "vec3", vec3, x);
-	lbs_register_float_field(L, "vec3", vec3, y);
-	lbs_register_float_field(L, "vec3", vec3, z);
+	lbs_register_generic_field(L, vec3, x);
+	lbs_register_generic_field(L, vec3, y);
+	lbs_register_generic_field(L, vec3, z);
 
 	lbs_register_type(L, "demo");
-	lbs_register_float_field(   L, "demo", demo, f);
-	lbs_register_double_field(  L, "demo", demo, d);
-	lbs_register_char_field(    L, "demo", demo, x);
-	lbs_register_int8_field(  L, "demo", demo, i8);
-	lbs_register_int16_field( L, "demo", demo, i16);
-	lbs_register_int32_field( L, "demo", demo, i32);
-	lbs_register_int64_field( L, "demo", demo, i64);
-	lbs_register_pointer_field(    L, "demo", demo, p);
+	lbs_register_generic_field(L, demo, f);
+	lbs_register_generic_field(L, demo, d);
+	lbs_register_generic_field(L, demo, x);
+	lbs_register_generic_field(L, demo, i8);
+	lbs_register_generic_field(L, demo, i16);
+	lbs_register_generic_field(L, demo, i32);
+	lbs_register_generic_field(L, demo, i64);
+	lbs_register_generic_field(L, demo, p);
 
 	luaL_newlib(L, lib);
 	return 1;
